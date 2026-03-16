@@ -1,0 +1,13 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# STEP 13a: RAILWAY DEPLOYMENT CONFIG
+# Railway is a free cloud platform. Push your code → it goes live automatically.
+# ─────────────────────────────────────────────────────────────────────────────
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "node server.js"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3

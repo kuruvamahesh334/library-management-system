@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><style>
+  body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
+  .card { background: #fff; max-width: 600px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+  .header { background: linear-gradient(135deg, #991b1b, #ef4444); color: #fff; padding: 28px 32px; text-align: center; }
+  .header h1 { margin: 0 0 4px; font-size: 1.4rem; }
+  .header p  { margin: 0; opacity: .85; font-size: .9rem; }
+  .body  { padding: 28px 32px; }
+  .overdue-box { background: #fef2f2; border: 2px solid #ef4444; border-radius: 10px; padding: 20px; text-align: center; margin: 20px 0; }
+  .overdue-box .days  { font-size: 2.2rem; font-weight: 800; color: #dc2626; }
+  .overdue-box .fine  { font-size: 1.6rem; font-weight: 800; color: #b91c1c; margin-top: 6px; }
+  .info-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .info-table td { padding: 9px 12px; font-size: .9rem; border-bottom: 1px solid #eee; }
+  .info-table td:first-child { font-weight: 600; color: #374151; width: 40%; }
+  .info-table td:last-child  { color: #dc2626; font-weight: 600; }
+  .action-box { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 14px 18px; margin: 16px 0; font-size: .88rem; color: #7f1d1d; }
+  .footer { background: #f9fafb; padding: 18px 32px; text-align: center; font-size: .78rem; color: #9ca3af; border-top: 1px solid #e5e7eb; }
+</style></head>
+<body>
+<div class="card">
+  <div class="header">
+    <h1>🚨 OVERDUE NOTICE</h1>
+    <p>{{collegeName}} — Central Library</p>
+  </div>
+  <div class="body">
+    <p>Dear <strong>{{userName}}</strong>,</p>
+    <p>Your borrowed book is <strong>OVERDUE</strong>. Please return it immediately to avoid further penalty.</p>
+    <table class="info-table">
+      <tr><td>Book Title</td><td>{{resourceTitle}}</td></tr>
+      <tr><td>Accession No.</td><td>{{accessionNo}}</td></tr>
+      <tr><td>Due Date</td><td>{{dateOfReturn}}</td></tr>
+    </table>
+    <div class="overdue-box">
+      <div>Days Overdue</div>
+      <div class="days">{{overdueDays}} Days</div>
+      <div style="margin-top:8px; color:#9ca3af;">Current Fine</div>
+      <div class="fine">{{fineAmount}}</div>
+      <div style="font-size:.8rem; color:#9ca3af; margin-top:4px;">₹{{finePerDay}} per day</div>
+    </div>
+    <div class="action-box">
+      ⚡ Please visit the Central Library <strong>immediately</strong> to return the book. Fine amount increases by <strong>₹{{finePerDay}} every day</strong>.
+      Your library membership may be suspended if the book is not returned within 7 days.
+    </div>
+  </div>
+  <div class="footer">{{collegeName}} — Central Library<br>This is an automated overdue notice. Please do not reply.</div>
+</div>
+</body></html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><style>
+  body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
+  .card { background: #fff; max-width: 600px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+  .header { background: linear-gradient(135deg, #065f46, #10b981); color: #fff; padding: 28px 32px; text-align: center; }
+  .header h1 { margin: 0 0 4px; font-size: 1.4rem; }
+  .header p  { margin: 0; opacity: .85; font-size: .9rem; }
+  .body  { padding: 28px 32px; }
+  .success-box { background: #f0fdf4; border: 2px solid #10b981; border-radius: 10px; padding: 18px; text-align: center; margin: 20px 0; }
+  .success-box .check { font-size: 2.5rem; }
+  .success-box p { font-size: 1.1rem; font-weight: 700; color: #065f46; margin: 8px 0 0; }
+  .info-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .info-table td { padding: 9px 12px; font-size: .9rem; border-bottom: 1px solid #eee; }
+  .info-table td:first-child { font-weight: 600; color: #374151; width: 40%; }
+  .info-table td:last-child  { color: #065f46; }
+  .footer { background: #f9fafb; padding: 18px 32px; text-align: center; font-size: .78rem; color: #9ca3af; border-top: 1px solid #e5e7eb; }
+</style></head>
+<body>
+<div class="card">
+  <div class="header">
+    <h1>✅ Book Returned</h1>
+    <p>{{collegeName}} — Central Library</p>
+  </div>
+  <div class="body">
+    <p>Dear <strong>{{userName}}</strong>,</p>
+    <div class="success-box">
+      <div class="check">✅</div>
+      <p>Book returned successfully!</p>
+    </div>
+    <table class="info-table">
+      <tr><td>Book Title</td><td>{{resourceTitle}}</td></tr>
+      <tr><td>Accession No.</td><td>{{accessionNo}}</td></tr>
+      <tr><td>Date Returned</td><td>{{dateOfReturn}}</td></tr>
+      <tr><td>Fine Amount</td><td>{{fineAmount}}</td></tr>
+      <tr><td>Fine Status</td><td>{{fineStatus}}</td></tr>
+    </table>
+    <p style="font-size:.85rem; color:#6b7280;">Thank you for returning the book. You are welcome to borrow again!</p>
+  </div>
+  <div class="footer">{{collegeName}} — Central Library<br>This is an automated receipt. Please do not reply.</div>
+</div>
+</body></html>

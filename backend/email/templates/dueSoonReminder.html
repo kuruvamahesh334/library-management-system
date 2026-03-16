@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><style>
+  body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
+  .card { background: #fff; max-width: 600px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+  .header { background: linear-gradient(135deg, #b45309, #f59e0b); color: #fff; padding: 28px 32px; text-align: center; }
+  .header h1 { margin: 0 0 4px; font-size: 1.4rem; }
+  .header p  { margin: 0; opacity: .85; font-size: .9rem; }
+  .body  { padding: 28px 32px; }
+  .info-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .info-table td { padding: 9px 12px; font-size: .9rem; border-bottom: 1px solid #eee; }
+  .info-table td:first-child { font-weight: 600; color: #374151; width: 40%; }
+  .info-table td:last-child  { color: #b45309; }
+  .due-box { background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 18px; margin: 18px 0; text-align: center; }
+  .due-box .days { font-size: 1.8rem; font-weight: 800; color: #b45309; }
+  .fine-warn { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 14px 18px; margin: 16px 0; font-size: .88rem; color: #9a3412; }
+  .footer { background: #f9fafb; padding: 18px 32px; text-align: center; font-size: .78rem; color: #9ca3af; border-top: 1px solid #e5e7eb; }
+</style></head>
+<body>
+<div class="card">
+  <div class="header">
+    <h1>⚠️ Return Reminder</h1>
+    <p>{{collegeName}} — Central Library</p>
+  </div>
+  <div class="body">
+    <p>Dear <strong>{{userName}}</strong>,</p>
+    <p>This is a reminder that your borrowed book is due soon. Please return it on time to avoid fines.</p>
+    <table class="info-table">
+      <tr><td>Book Title</td><td>{{resourceTitle}}</td></tr>
+      <tr><td>Accession No.</td><td>{{accessionNo}}</td></tr>
+      <tr><td>Due Date</td><td>{{dateOfReturn}}</td></tr>
+    </table>
+    <div class="due-box">
+      <div class="days">{{daysLeft}}</div>
+      <div style="font-weight:600; color:#92400e; margin-top:4px;">Days Remaining</div>
+    </div>
+    <div class="fine-warn">
+      💸 A fine of <strong>₹{{finePerDay}}/day</strong> will be charged after the due date. Please return the book on time.
+    </div>
+  </div>
+  <div class="footer">{{collegeName}} — Central Library<br>This is an automated reminder. Please do not reply.</div>
+</div>
+</body></html>
